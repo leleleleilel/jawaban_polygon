@@ -18,7 +18,8 @@ return new class extends Migration
             $table->integer('nominal');
             $table->string('keterangan')->nullable();
             $table->enum('jenis_transaksi',['pemasukan','pengeluaran']);
-            $table->enum('status',['approved','rejected']);
+            $table->enum('status',['approved','rejected','pending']);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
